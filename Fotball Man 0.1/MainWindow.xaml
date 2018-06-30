@@ -1,0 +1,78 @@
+﻿<Window x:Class="Fotball_Man_0._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Fotball_Man_0._1"
+        MouseDown="Window_MouseDown"
+    Background="{DynamicResource MaterialDesignPaper}"
+        Foreground="White"
+        FontSize="15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="345" Width="827.683" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="318*"></ColumnDefinition>
+            <ColumnDefinition Width="365*"></ColumnDefinition>
+            <ColumnDefinition Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="1" Margin="10" Name="ListCountries" SelectionChanged="ListCountries_SelectionChanged"></ListView>
+
+        <materialDesign:Card Grid.Column="1" Grid.Row="1" Padding="10" Margin="15,15,15,0" Grid.ColumnSpan="2" Height="242">
+            <StackPanel>
+
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition  Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.ColumnSpan="4" FontSize="20" FontWeight="Bold" TextAlignment="Center" Name="tbCountName" Text="Country"></TextBlock>
+
+                    <TextBlock Grid.Row="1" Text="Capital:" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Name="tbCapital" VerticalAlignment="Center"></TextBlock>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Population:" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="3" Name="tbPopulation" VerticalAlignment="Center"></TextBlock>
+
+                    <TextBlock Grid.Row="2"  Text="Currency:" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Name="tbCurr" VerticalAlignment="Center" ></TextBlock>
+
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Area:" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="3" Name="tbArea"  VerticalAlignment="Center" ></TextBlock>
+
+                    <Image Name="imgFlag" Stretch="Uniform" Margin="10" Grid.Row="3" Grid.ColumnSpan="4" Source="C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\Pictures\System\notfound.jpg">
+
+                    </Image>
+                </Grid>
+
+            </StackPanel>
+
+        </materialDesign:Card>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="btnClose" Click="btnClose_Click" Grid.Column="2" Padding="0"  Margin="5,9,8,9"  Width="35" Background="Red">
+                <materialDesign:PackIcon Kind="Close" Width="35" Height="30"></materialDesign:PackIcon>
+            </Button>
+            <materialDesign:PackIcon Kind="Map" VerticalAlignment="Center" Width="42" Height="32" Margin="0,10,0,8" ></materialDesign:PackIcon>
+            <TextBlock VerticalAlignment="Center" FontSize="25" Text="Select your counrty"></TextBlock>
+        </StackPanel>
+        <Button HorizontalAlignment="Right" Grid.Column="2" Padding="0"  Margin="0,9,8,9" Height="Auto" Width="79">
+            <materialDesign:PackIcon Kind="ArrowRightBold" Width="79" Height="30"></materialDesign:PackIcon>
+        </Button>
+    </Grid>
+
+</Window>

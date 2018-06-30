@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootballModelStoreContainer" CdmEntityContainer="CountriesEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="FootballModel.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="AreaSqKm" ColumnName="AreaSqKm" />
+          <ScalarProperty Name="Capital" ColumnName="Capital" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

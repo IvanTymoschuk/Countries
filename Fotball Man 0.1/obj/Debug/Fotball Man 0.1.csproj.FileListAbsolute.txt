@@ -1,0 +1,26 @@
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\Fotball Man 0.1.exe.config
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\Fotball Man 0.1.exe
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\Fotball Man 0.1.pdb
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\MaterialDesignColors.dll
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.csprojAssemblyReference.cache
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\MainWindow.g.cs
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\App.g.cs
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1_MarkupCompile.cache
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1_MarkupCompile.lref
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\App.baml
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\MainWindow.baml
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.g.resources
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball_Man_0._1.Properties.Resources.resources
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.csproj.GenerateResource.cache
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.csproj.CopyComplete
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.exe
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1.pdb
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\EntityFramework.dll
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\EntityFramework.xml
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ivan\source\repos\Fotball Man 0.1\Fotball Man 0.1\obj\Debug\Fotball Man 0.1_Content.g.cs

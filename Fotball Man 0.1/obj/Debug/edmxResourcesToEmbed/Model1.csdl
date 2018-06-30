@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="IdAdress" />
+    </Key>
+    <Property Name="IdAdress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCountry" Type="Int32" Nullable="false" />
+    <Property Name="Town" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Adress__IdCountr__3F466844" FromRole="Adress" ToRole="Country" />
+    <NavigationProperty Name="Producer" Relationship="Self.FK__Producer__IdAdre__44FF419A" FromRole="Adress" ToRole="Producer" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK__Supplier__IdAdre__4222D4EF" FromRole="Adress" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__IdCateg__47DBAE45" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="IdCountry" />
+    </Key>
+    <Property Name="IdCountry" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__IdCountr__3F466844" FromRole="Country" ToRole="Adress" />
+  </EntityType>
+  <EntityType Name="Delivery">
+    <Key>
+      <PropertyRef Name="IdDelivery" />
+    </Key>
+    <Property Name="IdDelivery" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProduct" Type="Int32" Nullable="false" />
+    <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="DateDelivery" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Delivery__IdProd__4D94879B" FromRole="Delivery" ToRole="Product" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK__Delivery__IdSupp__4E88ABD4" FromRole="Delivery" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Markup">
+    <Key>
+      <PropertyRef Name="IdMarkup" />
+    </Key>
+    <Property Name="IdMarkup" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Percent" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__IdMarku__4AB81AF0" FromRole="Markup" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Measurement">
+    <Key>
+      <PropertyRef Name="IdMeasurement" />
+    </Key>
+    <Property Name="IdMeasurement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__IdMeasu__49C3F6B7" FromRole="Measurement" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Producer">
+    <Key>
+      <PropertyRef Name="IdProducer" />
+    </Key>
+    <Property Name="IdProducer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdAdress" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Producer__IdAdre__44FF419A" FromRole="Producer" ToRole="Adress" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__IdProdu__48CFD27E" FromRole="Producer" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+    </Key>
+    <Property Name="IdProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCategory" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="IdProducer" Type="Int32" Nullable="false" />
+    <Property Name="IdMeasurement" Type="Int32" Nullable="false" />
+    <Property Name="IdMarkup" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Product__IdCateg__47DBAE45" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Delivery" Relationship="Self.FK__Delivery__IdProd__4D94879B" FromRole="Product" ToRole="Delivery" />
+    <NavigationProperty Name="Markup" Relationship="Self.FK__Product__IdMarku__4AB81AF0" FromRole="Product" ToRole="Markup" />
+    <NavigationProperty Name="Measurement" Relationship="Self.FK__Product__IdMeasu__49C3F6B7" FromRole="Product" ToRole="Measurement" />
+    <NavigationProperty Name="Producer" Relationship="Self.FK__Product__IdProdu__48CFD27E" FromRole="Product" ToRole="Producer" />
+    <NavigationProperty Name="Sale" Relationship="Self.FK__Sale__IdProduct__5165187F" FromRole="Product" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="IdSale" />
+    </Key>
+    <Property Name="IdSale" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProduct" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="DateSale" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Sale__IdProduct__5165187F" FromRole="Sale" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="IdSupplier" />
+    </Key>
+    <Property Name="IdSupplier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdAdress" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Supplier__IdAdre__4222D4EF" FromRole="Supplier" ToRole="Adress" />
+    <NavigationProperty Name="Delivery" Relationship="Self.FK__Delivery__IdSupp__4E88ABD4" FromRole="Supplier" ToRole="Delivery" />
+  </EntityType>
+  <Association Name="FK__Adress__IdCountr__3F466844">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Producer__IdAdre__44FF419A">
+    <End Role="Adress" Type="Self.Adress" Multiplicity="1" />
+    <End Role="Producer" Type="Self.Producer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adress">
+        <PropertyRef Name="IdAdress" />
+      </Principal>
+      <Dependent Role="Producer">
+        <PropertyRef Name="IdAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier__IdAdre__4222D4EF">
+    <End Role="Adress" Type="Self.Adress" Multiplicity="1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adress">
+        <PropertyRef Name="IdAdress" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="IdAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__IdCateg__47DBAE45">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="IdCategory" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Delivery__IdProd__4D94879B">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IdProduct" />
+      </Principal>
+      <Dependent Role="Delivery">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Delivery__IdSupp__4E88ABD4">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="IdSupplier" />
+      </Principal>
+      <Dependent Role="Delivery">
+        <PropertyRef Name="IdSupplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__IdMarku__4AB81AF0">
+    <End Role="Markup" Type="Self.Markup" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Markup">
+        <PropertyRef Name="IdMarkup" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="IdMarkup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__IdMeasu__49C3F6B7">
+    <End Role="Measurement" Type="Self.Measurement" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Measurement">
+        <PropertyRef Name="IdMeasurement" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="IdMeasurement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__IdProdu__48CFD27E">
+    <End Role="Producer" Type="Self.Producer" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producer">
+        <PropertyRef Name="IdProducer" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="IdProducer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sale__IdProduct__5165187F">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IdProduct" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adress" EntityType="Self.Adress" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Delivery" EntityType="Self.Delivery" />
+    <EntitySet Name="Markup" EntityType="Self.Markup" />
+    <EntitySet Name="Measurement" EntityType="Self.Measurement" />
+    <EntitySet Name="Producer" EntityType="Self.Producer" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Sale" EntityType="Self.Sale" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" />
+    <AssociationSet Name="FK__Adress__IdCountr__3F466844" Association="Self.FK__Adress__IdCountr__3F466844">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Producer__IdAdre__44FF419A" Association="Self.FK__Producer__IdAdre__44FF419A">
+      <End Role="Adress" EntitySet="Adress" />
+      <End Role="Producer" EntitySet="Producer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier__IdAdre__4222D4EF" Association="Self.FK__Supplier__IdAdre__4222D4EF">
+      <End Role="Adress" EntitySet="Adress" />
+      <End Role="Supplier" EntitySet="Supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__IdCateg__47DBAE45" Association="Self.FK__Product__IdCateg__47DBAE45">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Delivery__IdProd__4D94879B" Association="Self.FK__Delivery__IdProd__4D94879B">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Delivery" EntitySet="Delivery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Delivery__IdSupp__4E88ABD4" Association="Self.FK__Delivery__IdSupp__4E88ABD4">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Delivery" EntitySet="Delivery" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__IdMarku__4AB81AF0" Association="Self.FK__Product__IdMarku__4AB81AF0">
+      <End Role="Markup" EntitySet="Markup" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__IdMeasu__49C3F6B7" Association="Self.FK__Product__IdMeasu__49C3F6B7">
+      <End Role="Measurement" EntitySet="Measurement" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__IdProdu__48CFD27E" Association="Self.FK__Product__IdProdu__48CFD27E">
+      <End Role="Producer" EntitySet="Producer" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sale__IdProduct__5165187F" Association="Self.FK__Sale__IdProduct__5165187F">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Sale" EntitySet="Sale" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
